@@ -291,7 +291,7 @@ h2 {
 }
 
 #ARLETTE {
-    background-image: url(images/ARLETTE.jpg);
+    background-image: url(images/Arlette.jpg);
     height: calc(var(--vh, 1vh) * 100);
     background-size: cover;
     background-position: center 70%;
@@ -370,7 +370,7 @@ h2 {
 }
 
 #FANTINE {
-    background-image: url(images/FANTINE.jpg);
+    background-image: url(images/Fantine.jpg);
     height: calc(var(--vh, 1vh) * 100);
     background-size: cover;
     background-position: center 70%;
