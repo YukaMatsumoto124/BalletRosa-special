@@ -1,0 +1,1343 @@
+@charset "UTF-8";
+
+/* 共通部分 */
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --brown: #704d4d;
+    --pink: #ecb0c1;
+    --grey: #dcdbdb;
+}
+
+body {
+    background-color: var(--grey);
+    font-family: 'メイリオ', 'Meiryo','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3', sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+
+main, a, p {
+    color: var(--brown);
+    font-size: .9rem;
+}
+
+section {
+    margin-bottom: 150px;
+}
+
+
+/* 大ボタン共通 */
+.btn-bg {
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+    background-color: var(--brown);
+    width: 30%;
+    max-width: 500px;
+    margin: 30px auto 0;
+    /* border-radius: 10px; */
+    transition: .3s;
+}
+
+/* 小ボタン共通 */
+.btn-sml {
+    padding: 8px 10px;
+    text-align: center;
+    color: var(--brown);
+    font-family: linotype-didot, serif;
+    background-color: transparent;
+    border: var(--brown) 1px solid;
+    width: 100px;
+    margin: 10px auto 0;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.btn-wh {
+    color: #fff;
+    border: #fff 1px solid;
+}
+
+.btn-bg:hover, .btn-sml:hover {
+    opacity: .7;
+}
+
+
+/* ローディング画面 */
+#loading {
+    transition: all 1s;
+    background: rgb(220, 219, 219, 1);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+#loading p {
+    font-size: 1.2rem;
+    font-family: "the-seasons", sans-serif;
+    font-family: linotype-didot, serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--brown);
+}
+
+#loading img {
+    width: 20%;
+    margin-bottom: 10px;
+}
+
+
+/* ヘッダー */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 50px;
+    /* position: fixed; */
+    z-index: 10;
+    /* top: 0; */
+    width: 100%;
+    background-color: transparent;
+    align-items: center;
+}
+
+.btn-menu {
+    display: none;
+}
+
+.logo {
+    width: 85px;
+    position: relative;
+    /* top: 7px; */
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 450px;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+}
+
+.main-nav a {
+    font-size: 14px;
+}
+
+.main-nav a::before {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    margin-right: 3px;
+}
+
+.mypage::before {
+    content: url(https://www.fairynet.co.jp/pic-labo/icon_mypage.png);
+}
+
+.cart::before {
+    content: url(https://www.fairynet.co.jp/pic-labo/icon_cart.png);
+}
+
+.favorite::before {
+    content: url(https://www.fairynet.co.jp/pic-labo/icon_heart.png);
+}
+
+.contact::before {
+    content: url(https://www.fairynet.co.jp/pic-labo/icon_mail.png);
+}
+
+/* メインビジュアル */
+
+.main-visual {
+    text-align: center;
+    /* background-image: url(images/Bouvier-main.jpg); */
+    max-height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+}
+
+.logo-box {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    justify-content: space-between;
+}
+
+.rosa-logo, .fairy-logo {
+    display: block;
+    width: 40%;
+}
+
+.cross {
+    font-size: 100px;
+    color: #fff;
+    position: relative;
+    top: 40px;
+}
+
+#About {
+    background-image: url(images/Rose.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 8%;
+}
+
+.about-title {
+    margin: 100px 0 30px;
+}
+
+#About p {
+    text-align: center;
+    line-height: 1.8;
+}
+
+#shop-banner {
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+.banner-sp, .jack-introduction {
+    display: none;
+}
+
+
+/* 本文共通 */
+
+h2 {
+    font-size: 1.6rem;
+    text-align: center;
+    font-family: linotype-didot, serif;
+}
+
+.ja-title {
+    text-align: center;
+    font-size: 1rem;
+    margin: 8px 0 50px;
+}
+
+.item-name {
+    font-family: tangerine, sans-serif;
+    font-size: 6.5rem;
+    text-align: center;
+}
+
+.item-name {
+    font-family: "the-seasons", sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.comment-box p {
+    line-height: 1.5;
+}
+
+.comment-title {
+    font-family: linotype-didot, serif;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+.sp-img {
+    display: none;
+}
+
+
+/* 2025年新作アイテム */
+
+#PHOEBE {
+    display: flex;
+    /* flex-direction: row-reverse; */
+    align-items: center;
+}
+
+#PHOEBE img {
+    height: calc(var(--vh, 1vh)* 100);
+    width: 100%;
+    object-fit: cover;
+}
+
+#PHOEBE .item-detail {
+    width: 50%;
+}
+
+.img-box {
+    width: 50%;
+}
+
+#ARLETTE {
+    background-image: url(images/ARLETTE.jpg);
+    height: calc(var(--vh, 1vh) * 100);
+    background-size: cover;
+    background-position: center 70%;
+    position: relative;
+}
+
+#ARLETTE .item-detail {
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#MOLLIE {
+    background-image: url(images/MOLLIE_2.jpg);
+    height: calc(var(--vh, 1vh) * 100);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+}
+
+#MOLLIE .item-detail {
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    transform: translate(-50%, -50%);
+}
+
+#NOUVEL {
+    background-image: url(images/Nouvel2-main.jpg);
+    height: calc(var(--vh, 1vh) * 100);
+    background-size: cover;
+    background-position: center 70%;
+    position: relative;   
+}
+
+#NOUVEL .item-detail {
+    position: absolute;
+    bottom: 5%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+
+#DUVAL {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+#DUVAL img {
+    height: calc(var(--vh, 1vh)* 100);
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+#DUVAL .item-detail {
+    width: 50%;
+}
+
+#MIETTE {
+    position: relative;
+}
+
+#MIETTE img {
+    max-height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+#MIETTE .item-detail {
+    position: absolute;
+    top: 28%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+}
+
+#FANTINE {
+    background-image: url(images/FANTINE.jpg);
+    height: calc(var(--vh, 1vh) * 100);
+    background-size: cover;
+    background-position: center 70%;
+    position: relative; 
+}
+#FANTINE .item-detail {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#THALIE {
+    display: flex;
+    /* flex-direction: row-reverse; */
+    align-items: center;
+}
+#THALIE img {
+    height: calc(var(--vh, 1vh)* 100);
+    width: 100%;
+    object-fit: cover;
+}
+
+#THALIE .item-detail {
+    width: 50%;
+}
+
+
+/* スタッフのおすすめ */
+
+#MIRIELLE {
+    background-image: url(images/Mirielle.jpg);
+    height: calc(var(--vh, 1vh) * 100);
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+}
+
+#MIRIELLE .item-detail {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#MIRIELLE p, #EMMELINE p, #BOUVIER p, #LUCIENNE .item-name, #XENIA p {
+    color: #fff;
+}
+
+#MIRIELLE .comment-box {
+    position: absolute;
+    bottom: 3%;
+    right: -3%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+}
+
+#DELIA {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+#DELIA .comment-box {
+    width: 40%;
+    margin: 150px auto 0;
+}
+
+#DELIA img {
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+#EMMELINE {
+    background-image: url(images/Emmeline-cut.jpg);
+    height: calc(var(--vh, 1vh) * 100);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+}
+
+#EMMELINE .item-detail {
+    position: absolute;
+    top: 20%;
+    right: -3%;
+    transform: translate(-50%, -50%);
+}
+
+#EMMELINE .comment-box {
+    position: absolute;
+    bottom: 7%;
+    left: 23%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+}
+
+#CAPRICE {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#CAPRICE .item-detail {
+    width: 45%;
+    padding-right: 5%;
+}
+
+#CAPRICE .comment-box {
+    width: 50%;
+    margin: 150px auto 0;
+}
+
+#CAPRICE img {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+#BOUVIER {
+    background-image: url(images/Bouvier-cut.jpg);
+    height: calc(var(--vh, 1vh) * 100);
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+}
+
+#BOUVIER .item-detail {
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+
+#BOUVIER .comment-box {
+    position: absolute;
+    bottom: 3%;
+    right: -3%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+}
+
+#LUCIENNE {
+    position: relative;
+}
+
+.img-center {
+    text-align: center;
+}
+
+#LUCIENNE img {
+    max-height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+#LUCIENNE .item-detail {
+    position: absolute;
+    top: 28%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+}
+
+#LUCIENNE .comment-box {
+    position: absolute;
+    bottom: 0%;
+    right: -5%;
+    transform: translate(-50%, -50%);
+    width: 23%;
+    text-align: left;
+    background-color: rgb(255, 255, 255, .5);
+    padding: 20px;
+}
+
+#XENIA {
+    background-image: url(images/Xenia-cut.jpg);
+    height: calc(var(--vh, 1vh) * 100);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+}
+
+#XENIA .item-detail {
+    position: absolute;
+    bottom: 7%;
+    right: 4%;
+    transform: translate(-50%, -50%);
+}
+
+#XENIA .comment-box {
+    position: absolute;
+    top: 15%;
+    left: 21%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+}
+
+#ETSU {
+    position: relative;
+}
+
+#ETSU img {
+    /* margin: 50px 0; */
+    max-height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+#ETSU .item-detail {
+    position: absolute;
+    top: 28%;
+    left: 16%;
+    transform: translate(-50%, -50%);
+}
+
+#ETSU .comment-box {
+    position: absolute;
+    bottom: 0%;
+    right: -6%;
+    transform: translate(-50%, -50%);
+    width: 19%;
+    text-align: left;
+}
+
+
+
+
+
+/* フッター */
+
+footer, .menu a {
+    background-color: var(--brown);
+    color: #fff;
+}
+
+footer {
+    margin-top: 80px;
+}
+
+.ftr-SNS-btns {
+    display: flex;
+    list-style: none;
+    width: 33%;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.ftr-Heading {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.newsletter {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.mailAddress {
+    font-size: 12px;
+    padding: 12px 0 12px 2%;
+    width: 78%;
+    border: none;
+    background: #fff;
+    border-radius: 0px;
+}
+
+.btn-confirmNext {
+    width: 22%;
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    padding: 13px 0;
+    background: var(--pink);
+    color: #ffffff;
+    line-height: 1em;
+    transition: .3s;
+    border: none;
+    float: right;
+}
+
+.NL-stop {
+    color: #fff;
+    display: block;
+    margin: 12px 0 0 0;
+    text-align: center;
+    
+}
+
+.copyright {
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 0.8em;
+    display: block;
+    margin-top: 70px;
+}
+
+#floating-menu {
+    display: block;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 100;
+}
+
+.top-btn {
+    background-color: #ecb0c1;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+}
+
+.top-btn::before {
+    content: '\f077';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 22px;
+    color: #fff;
+    top: 1px;
+}
+
+
+/*ここからタブレットサイズ（画面の横幅が429px〜959px）*/
+
+@media screen and (max-width: 959px) {
+
+    /* .wrapper {
+        width: 85%;
+    } */
+
+    main, a, p {
+        font-size: .8rem;
+    }
+
+    #loading p {
+        font-size: 1.2rem;
+    }
+
+    /* 大ボタン共通 */
+    .btn-bg {
+        width: 50%;
+        font-size: 0.8rem;
+    }
+
+    /* 小ボタン共通 */
+    .btn-sml {
+        padding: 5px 10px;
+        width: 80px;
+        font-size: 12px;
+    }
+
+
+    .logo {
+        top: 10px;
+        width: 100px;
+    }
+
+    .page-header {
+        padding: 10px 20px 10px 30px;
+    }
+
+    .btn-menu {
+        position: absolute;
+        top: .8rem;
+        right: 2rem;
+        border: .5px solid var(--brown);
+        color: var(--brown);
+        padding: 0.6rem 0.8rem;
+        background: transparent;
+        font-size: 1em;
+        letter-spacing: 0.08em;
+        display: block;
+        /* border-radius: 10px; */
+    }
+
+    h1 a {
+        text-align: center;
+    }
+
+    .main-nav {
+        width: 0;
+        background: rgb(255, 255, 255, .8);
+        position: absolute;
+        z-index: 12;
+        top: 82px;
+        right: 0;
+        overflow: hidden;
+        display: block;
+        transition: .8s;
+    }
+
+    .main-nav.open-menu {
+        width: 33%;    
+    }
+    
+    .main-nav li {
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    .main-nav a {
+        display: block;
+    }
+
+    .logo-box {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .rosa-logo, .fairy-logo {
+        width: 30%;
+    }
+
+    .cross {
+    font-size: 80px;
+    top: 27px;
+    margin: 0 2%;
+    }
+
+    #About {
+        background-size: 10%;
+    }
+
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .ja-title {
+        font-size: 1rem;
+    }
+
+    .item-name {
+        font-size: 3.5rem;
+    }
+
+
+    /* 新作アイテム */
+
+    #MOLLIE {
+        background-size: cover;
+        background-position: center;
+    }
+    
+    #MOLLIE .item-detail, #NOUVEL .item-detail {
+        left: 50%;
+        top: 50%;
+        bottom: inherit;
+    }
+
+    .item-name-tab {
+        color: #fff;
+    }
+
+    .btn-wh-tab {
+        color: #fff;
+        border: #fff 1px solid;
+    }
+
+    #MIETTE img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    #MIETTE .item-detail {
+        bottom: 5%;
+        top: inherit;
+    }
+
+
+    /* スタッフおすすめ */
+    #EMMELINE {
+        background-size: cover;
+    }
+
+    #MIRIELLE .comment-box {
+        bottom: 1%;
+        left: 30%;
+        width: 40%;
+    }
+
+    #EMMELINE .comment-box {
+        bottom: 10%;
+        left: 50%;
+        width: 40%;
+        /* padding: 20px; */
+    }
+
+    #DELIA img, #CAPRICE img {
+        display: none;
+    }
+
+    #DELIA {
+        background-image: url(images/Delia.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: calc(var(--vh, 1vh) * 100);
+        align-items: flex-end;
+    }
+
+    #DELIA .item-name,
+    #DELIA .item-detail p,
+    #CAPRICE .item-name,
+    #CAPRICE .item-detail p,
+    #ETSU .item-name,
+    #ETSU .comment-box p {
+        color: #fff;
+    }
+
+    #DELIA .btn-sml,
+    #CAPRICE .btn-sml,
+    #ETSU .btn-sml {
+        color: #fff;
+        border: #fff 1px solid;
+    }
+
+    #DELIA .comment-box {
+        margin: 50px auto 100px;
+    }
+
+    #EMMELINE .item-detail {
+        top: 62%;
+        left: 50%;
+    }
+
+    #CAPRICE {
+        background: url(images/Caprice.jpg) no-repeat center;
+        background-size: contain;
+        height: calc(var(--vh, 1vh) * 100);
+
+    }
+
+    #CAPRICE .item-detail {
+        width: 60%;
+        padding-right: 0;
+    }
+
+    #CAPRICE .comment-box {
+        width: 60%;
+        margin-top: 50px;
+    }
+
+    #BOUVIER .item-detail {
+        top: 50%;
+        left: 25%;
+    }
+
+    #BOUVIER .comment-box {
+        bottom: 3%;
+        right: -8%;
+        width: 30%;
+    }
+
+    #LUCIENNE .item-detail {
+        top: 36%;
+        right: -17%;
+    }
+
+    #LUCIENNE .comment-box {
+        bottom: 8%;
+        left: 25%;
+        width: 35%;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    #LUCIENNE .comment-box p {
+        color: #fff;
+    }
+
+    #LUCIENNE img {
+        width: 100%;
+        height: initial;
+        max-height: initial;
+    }
+
+    #XENIA {
+        background-size: cover;
+    }
+
+    #XENIA .comment-box {
+        top: 12%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        width: 35%;
+    }
+
+    #ETSU img {
+        width: 100%;
+        height: initial;
+        max-height: initial;
+    }
+
+    #ETSU .item-detail {
+        top: 18%;
+        left: 23%;
+    }
+
+    #ETSU .comment-box {
+        bottom: 0%;
+        right: -4%;
+        width: 30%;
+    }
+
+    
+
+    .ftr-SNS-btns {
+        width: 50%;
+    }
+
+    .newsletter {
+        width: 50%;
+    }
+
+    .copyright {
+        padding: 30px 0;
+        /* font-size: 0.7em; */
+        padding-top: 30px;
+    }
+
+    #floating-menu {
+        bottom: 20px;
+        right: 30px;
+    }
+
+}
+
+
+
+/*ここからSPサイズ（画面の横幅が480pxまで）*/
+
+@media screen and (max-width: 480px) {
+
+    #loading p {
+        font-size: 1.1rem;
+    }
+
+    /* .wrapper {
+        width: 90%;
+    } */
+
+    /* 大ボタン共通 */
+    .btn-bg {
+        margin: 20px auto 0;
+        width: 75%;
+    }
+
+    /* 小ボタン共通 */
+    .btn-sml {
+        margin: 10px auto 0;
+    }
+
+    .page-header {
+        padding: 10px 0 20px 20px;
+    }
+    
+    .logo {
+        width: 80px;
+        position: relative;
+        top: 8px;
+    }
+    
+    .btn-menu {
+        right: 1rem;
+        top: .8rem;
+        font-size: 0.8em;
+    }
+    
+    .main-nav {
+        top: 67px;
+    }
+
+    .main-nav.open-menu {
+        width: 50%;
+    }
+
+    .main-nav a {
+        font-size: 12px;
+    }
+    
+    .main-visual {
+        background-position-x: 55%;
+    }
+
+    .logo-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rosa-logo, .fairy-logo {
+        width: 200px;
+    }
+
+    .cross {
+        top: 0;
+        margin: 0;
+    }
+
+    #About {
+        width: 75%;
+        margin: 0 auto 70px;
+        /* text-align: left; */
+        background-size: 30%;
+    }
+
+    .about-title {
+        margin-top: 70px;
+    }
+
+    .blank {
+        display: none;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    .ja-title {
+        font-size: .9rem;
+        margin-bottom: 30px;
+    }
+
+    /* 売れ筋商品 */
+
+    #PHOEBE {
+        background-image: url(images/PHOEBE.jpg);
+        height: calc(var(--vh, 1vh) * 100);
+        background-size: cover;
+        background-position: center 70%;
+        position: relative; 
+    }
+    #PHOEBE img {
+        display: none;
+    }
+    #PHOEBE .item-detail {
+        position: absolute;
+        top: 14%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #DUVAL {
+        background-image: url(images/Duval3.jpg);
+        height: calc(var(--vh, 1vh) * 100);
+        background-size: cover;
+        background-position: center 70%;
+        position: relative; 
+    }
+    #DUVAL img {
+        display: none;
+    }
+    #DUVAL .item-detail {
+        position: absolute;
+        bottom: 12%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #NOUVEL {
+        background-position: 65%;
+    }
+
+    #MIETTE .item-detail {
+        left: 25%;
+    }
+
+    #FANTINE {
+        background-position: 20%;
+        background-image: url(images/FANTINE2.jpg);
+        
+    }
+
+    #THALIE {
+        background-image: url(images/Thalie2.jpg);
+        height: calc(var(--vh, 1vh) * 100);
+        background-size: cover;
+        background-position: center;
+        position: relative; 
+    }
+    #THALIE img {
+        display: none;
+    }
+    #THALIE .item-detail {
+        position: absolute;
+        bottom: 12%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .item-name-sp {
+        color: #fff;
+    }
+    .btn-wh-sp {
+        color: #fff;
+        border: #fff 1px solid;
+    }
+
+    /* スタッフのおすすめ */
+
+    .item-name {
+        font-size: 3rem;
+    }
+
+    .comment-title {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    #MIRIELLE {
+        background-position-x: 22%;
+    }
+
+    #MIRIELLE .item-detail {
+        top: 18%;
+    }
+
+    #MIRIELLE .comment-box {
+        bottom: -2%;
+        left: 50%;
+        width: 60%;
+    }
+
+    #DELIA .comment-box {
+        margin-bottom: 70px;
+        width: 60%;
+    }
+
+    #EMMELINE {
+        background-position-x: 95%;
+    }
+
+    #EMMELINE .item-detail {
+        top: 20%;
+    }
+
+    #EMMELINE .comment-box {
+        bottom: 3%;
+        width: 60%;
+    }
+
+    #CAPRICE {
+        background-size: cover;
+    }
+
+    #CAPRICE .comment-box {
+        width: 100%;
+    }
+
+    #BOUVIER {
+        background-position-x: 78%;
+    }
+
+    #BOUVIER .item-detail {
+        top: 22%;
+        left: 72%;
+    }
+
+    #BOUVIER .comment-box {
+        bottom: 1%;
+        left: 50%;
+        width: 60%;
+    }
+
+    #LUCIENNE {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(var(--vh, 1vh) * 100);
+        background: url(images/Lucienne.jpg) no-repeat center;
+        background-size: cover;
+    }
+
+    #LUCIENNE img {
+        display: none;
+    }
+
+    #LUCIENNE .item-detail {
+        top: 55%;
+        left: 50%;
+    }
+
+    #LUCIENNE .comment-box {
+        bottom: 0%;
+        left: 50%;
+        width: 60%;
+    }
+
+    #XENIA {
+        background-position-x: 20%;
+    }
+
+    #XENIA .comment-box {
+        top: 15%;
+        left: 30%;
+        width: 48%;
+    }
+
+    #XENIA .item-detail {
+        bottom: 0%;
+        right: 0%;
+    }
+
+    #ETSU {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(var(--vh, 1vh) * 100);
+        background: url(images/Etsu-cut.jpg) no-repeat center;
+        background-size: cover;
+    }
+
+    #ETSU img {
+        display: none;
+    }
+
+    #ETSU .item-detail {
+        top: 15%;
+        left: 25%;
+    }
+
+    #ETSU .comment-box {
+        width: 65%;
+        left: 50%;
+        bottom: -5%;
+    }
+
+    #StaffChoice {
+        margin-bottom: 50px;
+    }
+
+    
+
+
+
+
+
+    
+    .ftr-SNS-btns {
+        width: 80%;
+    }
+
+    .ftr-SNS-btns img {
+        width: 90%;
+    }
+
+    .newsletter {
+        width: 65%;
+    }
+
+    .menu {
+        font-size: 1rem;
+    }
+
+    .copyright {
+        font-size: 0.6rem;
+    }
+
+    #floating-menu {
+        bottom: 15px;
+        right: 20px;
+    }
+
+    .top-btn {
+        padding: 9px;
+        font-size: .9rem;
+    }
+
+}
