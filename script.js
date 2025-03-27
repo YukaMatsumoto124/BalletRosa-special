@@ -45,8 +45,8 @@ var windowwidth = window.innerWidth || document.documentElement.clientWidth || 0
 		if (windowwidth > 429){
 			var responsiveImage = [//PC用の画像
 				{ src: 'images/Nouvel2-main.jpg'},
-				{ src: 'images/FANTINE.jpg'},
-				{ src: 'images/ARLETTE.jpg'}
+				{ src: 'images/Fantine.jpg'},
+				{ src: 'images/Arlette.jpg'}
 			];
 		} else {
 			var responsiveImage = [//SPサイズ（428px）以下用の画像
